@@ -50,7 +50,7 @@ export const products: Product[] = [
     price: 699,
     image: "product-2",
     manufacturer: "Apex",
-    category: "Signature",
+    category: "Street",
   },
   {
     id: "6",

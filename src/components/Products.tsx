@@ -2,16 +2,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { products, manufacturers } from "@/data/products";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart } from "lucide-react";
-import product1 from "@/assets/product-1.jpg";
-import product2 from "@/assets/product-2.jpg";
-import product3 from "@/assets/product-3.jpg";
-import product4 from "@/assets/product-4.jpg";
-import product5 from "@/assets/product-5.jpg";
-import product6 from "@/assets/product-6.jpg";
-import product7 from "@/assets/product-7.jpg";
-import product8 from "@/assets/product-8.jpg";
-import product9 from "@/assets/product-9.jpg";
+import { ShoppingCart, Star, Bookmark } from "lucide-react";
+import product1 from "@/assets/featured-2.jpg";
+import product2 from "@/assets/featured-2.jpg";
+import product3 from "@/assets/featured-2.jpg";
+import product4 from "@/assets/featured-2.jpg";
+import product5 from "@/assets/featured-3.jpg";
+import product6 from "@/assets/featured-3.jpg";
+import product7 from "@/assets/featured-3.jpg";
+import product8 from "@/assets/featured-3.jpg";
+import product9 from "@/assets/featured-3.jpg";
 
 const imageMap: { [key: string]: string } = {
   "product-1": product1,
@@ -76,13 +76,13 @@ const Products = () => {
           >
             Street
           </Button>
-          <Button
+          {/* <Button
             variant={selectedCategory === "Signature" ? "default" : "outline"}
             onClick={() => setSelectedCategory("Signature")}
             className="rounded-full"
           >
             Signature
-          </Button>
+          </Button> */}
         </div>
 
         {/* Product Grid */}
@@ -90,34 +90,33 @@ const Products = () => {
           {filteredProducts.map((product, index) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.05, duration: 0.5 }}
-              whileHover={{ y: -5 }}
-              className="group bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              transition={{ delay: index * 0.1, duration: 0.8 }}
+              whileHover={{ y: -10 }}
+              className="group relative"
             >
-              <div className="relative aspect-square overflow-hidden bg-muted">
+              <div className="relative overflow-hidden rounded-2xl bg-muted aspect-square">
                 <motion.img
                   src={imageMap[product.image]}
                   alt={product.name}
                   className="w-full h-full object-cover"
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.6 }}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
-              <div className="p-5">
-                <h3 className="text-lg font-bold mb-1">{product.name}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{product.manufacturer}</p>
+              <div className="mt-6">
+                <h3 className="text-xl font-bold mb-2">{product.name}</h3>
+                <p className="text-muted-foreground mb-4">{product.manufacturer}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold">${product.price}</span>
                   <Button
-                    size="sm"
-                    className="bg-accent hover:bg-accent/90 text-white rounded-full"
+                    className="bg-accent hover:bg-accent/90 text-white rounded-full px-6"
                   >
-                    <ShoppingCart size={16} className="mr-2" />
-                    Add
+                    Add to Cart
                   </Button>
                 </div>
               </div>

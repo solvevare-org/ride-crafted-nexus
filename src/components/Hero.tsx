@@ -1,8 +1,26 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useState, useRef, useEffect } from "react";
 import heroImage from "@/assets/hero-scooter.jpg";
 
 const Hero = () => {
+  const [videoError, setVideoError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      // Try to play the video
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          console.log("Video autoplay failed, showing fallback image");
+          setVideoError(true);
+        });
+      }
+    }
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -12,19 +30,42 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Hero Image with Parallax Effect */}
+      {/* Video Background */}
       <motion.div
         initial={{ scale: 1.2, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
         className="absolute inset-0 z-0"
       >
-        <div
-          className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
-        </div>
+        {!videoError ? (
+          <>
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                console.log("Video error:", e);
+                setVideoError(true);
+              }}
+              onCanPlay={() => {
+                console.log("Video can play");
+              }}
+              style={{ objectFit: 'cover' }}
+            >
+              <source src="/istockphoto-1413990606-640_adpp_is-vmake.mp4" type="video/mp4" />
+            </video>
+          </>
+        ) : (
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${heroImage})` }}
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
       </motion.div>
 
       {/* Content */}
@@ -60,7 +101,18 @@ const Hero = () => {
           <Button
             size="lg"
             onClick={() => scrollToSection("products")}
-            className="bg-white text-foreground hover:bg-white/90 text-lg px-8 py-6 rounded-full font-semibold"
+            className="flex items-center justify-center bg-white text-black hover:bg-white hover:text-black hover:-translate-y-0.5 hover:shadow-lg text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 ease-in-out"
+            style={{
+              boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0px)';
+              e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+            }}
           >
             Shop Now
           </Button>
@@ -68,28 +120,12 @@ const Hero = () => {
             size="lg"
             variant="outline"
             onClick={() => scrollToSection("custom-build")}
-            className="border-2 border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-6 rounded-full font-semibold"
+            className="flex items-center justify-center text-white bg-transparent hover:bg-white hover:text-black border border-white hover:border-black text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 ease-in-out"
           >
             Build Yours
           </Button>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2"
-        >
-          <motion.div className="w-1 h-2 bg-white/50 rounded-full" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

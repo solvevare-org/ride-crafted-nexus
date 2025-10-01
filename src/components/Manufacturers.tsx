@@ -29,7 +29,7 @@ const Manufacturers = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ scale: 1.1, y: -5 }}
-              className="flex items-center justify-center p-8 bg-muted rounded-2xl cursor-pointer hover:bg-accent/10 transition-all duration-300"
+              className="flex items-center justify-center p-8 rounded-2xl cursor-pointer hover:bg-black/20 transition-all duration-300"
             >
               <span className="text-2xl font-bold tracking-tight opacity-70 hover:opacity-100 transition-opacity">
                 {manufacturer}

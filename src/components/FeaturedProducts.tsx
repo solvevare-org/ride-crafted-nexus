@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { products } from "@/data/products";
 import { Button } from "@/components/ui/button";
-import featured1 from "@/assets/featured-1.jpg";
+import { Star, Bookmark } from "lucide-react";
+import featured1 from "@/assets/featured-2.jpg";
 import featured2 from "@/assets/featured-2.jpg";
 import featured3 from "@/assets/featured-3.jpg";
 
