@@ -5,21 +5,39 @@ import heroImage from "@/assets/hero-scooter.jpg";
 
 const Hero = () => {
   const [videoError, setVideoError] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
+      // Set a timeout to show image if video takes too long
+      const timeout = setTimeout(() => {
+        if (!videoLoaded) {
+          console.log("Video loading timeout, showing fallback image");
+          setVideoError(true);
+        }
+      }, 5000);
+
       // Try to play the video
       const playPromise = video.play();
       if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          console.log("Video autoplay failed, showing fallback image");
-          setVideoError(true);
-        });
+        playPromise
+          .then(() => {
+            console.log("Video playing successfully");
+            setVideoLoaded(true);
+            clearTimeout(timeout);
+          })
+          .catch(() => {
+            console.log("Video autoplay failed, showing fallback image");
+            setVideoError(true);
+            clearTimeout(timeout);
+          });
       }
+
+      return () => clearTimeout(timeout);
     }
-  }, []);
+  }, [videoLoaded]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -45,14 +63,23 @@ const Hero = () => {
               loop
               muted
               playsInline
-              preload="metadata"
+              preload="auto"
               className="w-full h-full object-cover"
               onError={(e) => {
                 console.log("Video error:", e);
                 setVideoError(true);
               }}
+              onLoadStart={() => {
+                console.log("Video loading started");
+              }}
               onCanPlay={() => {
                 console.log("Video can play");
+                setVideoError(false);
+                setVideoLoaded(true);
+              }}
+              onLoadedData={() => {
+                console.log("Video data loaded");
+                setVideoLoaded(true);
               }}
               style={{ objectFit: 'cover' }}
             >

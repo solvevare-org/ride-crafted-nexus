@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
       title: "Urban Commuter",
       rating: 5,
       comment: "The build quality is outstanding! I've been riding my custom scooter for 8 months now and it still feels brand new. The customer service team helped me choose the perfect setup for city riding.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
     },
     {
       id: "3",
