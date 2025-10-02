@@ -147,7 +147,7 @@ const Hero = () => {
             size="lg"
             variant="outline"
             onClick={() => scrollToSection("custom-build")}
-            className="flex items-center justify-center text-white bg-transparent hover:bg-white hover:text-black border border-white hover:border-black hover:-translate-y-0.5 text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 ease-in-out"
+            className="flex items-center justify-center text-white bg-transparent hover:bg-white hover:text-black border border-white hover:border-white hover:-translate-y-0.5 text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 ease-in-out"
           >
             Build Yours
           </Button>
