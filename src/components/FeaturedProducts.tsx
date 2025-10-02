@@ -25,7 +25,7 @@ const FeaturedProducts = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-7xl font-medium font-italic font-[Poppins] tracking-tighter mb-4">
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
             Featured Collection
           </h2>
           <p className="text-xl text-muted-foreground">

@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
       <Contact />
       <CTABanner />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

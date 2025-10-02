@@ -46,12 +46,12 @@ const Header = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {["products", "manufacturers", "custom-build", "featured", "testimonials", "contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className={`text-md font-medium tracking-wide uppercase hover:text-accent transition-colors duration-300 ${
+                className={`text-sm font-medium tracking-wide uppercase hover:text-accent transition-colors duration-300 ${
                   scrolled || mobileMenuOpen ? "text-black" : "text-white"
                 }`}
               >
@@ -89,7 +89,7 @@ const Header = () => {
             
             {/* Mobile Menu Button */}
             <button
-              className={`md:hidden p-2 transition-colors duration-300 ${
+              className={`lg:hidden p-2 transition-colors duration-300 ${
                 scrolled || mobileMenuOpen ? "text-black" : "text-white"
               }`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -107,7 +107,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+            className="lg:hidden bg-background border-b border-border overflow-hidden"
           >
             <nav className="container mx-auto px-6 py-6 flex justify-center items-center flex-col gap-4">
               {["products", "manufacturers", "custom-build", "featured", "testimonials", "contact"].map((item) => (
