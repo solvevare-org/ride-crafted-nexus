@@ -10,39 +10,13 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: "1",
-    name: "Apex Pro Elite",
-    price: 599,
-    image: "featured-1",
-    manufacturer: "Apex",
-    category: "Pro",
-    featured: true,
-  },
-  {
-    id: "2",
-    name: "Phoenix X Carbon",
-    price: 749,
-    image: "featured-2",
-    manufacturer: "Phoenix",
-    category: "Pro",
-    featured: true,
-  },
-  {
-    id: "3",
-    name: "Quantum Stealth",
-    price: 849,
-    image: "featured-3",
-    manufacturer: "Quantum",
-    category: "Pro",
-    featured: true,
-  },
-  {
     id: "4",
     name: "Shadow Series",
     price: 449,
     image: "product-1",
     manufacturer: "Shadow",
     category: "Street",
+    featured: true,
   },
   {
     id: "5",
@@ -51,6 +25,7 @@ export const products: Product[] = [
     image: "product-2",
     manufacturer: "Apex",
     category: "Street",
+    featured: true,
   },
   {
     id: "6",
@@ -59,6 +34,7 @@ export const products: Product[] = [
     image: "product-3",
     manufacturer: "Phoenix",
     category: "Street",
+    featured: true,
   },
   {
     id: "7",

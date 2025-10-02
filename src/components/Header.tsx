@@ -51,7 +51,7 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className={`text-sm font-medium tracking-wide uppercase hover:text-accent transition-colors duration-300 ${
+                className={`text-md font-medium tracking-wide uppercase hover:text-accent transition-colors duration-300 ${
                   scrolled || mobileMenuOpen ? "text-black" : "text-white"
                 }`}
               >

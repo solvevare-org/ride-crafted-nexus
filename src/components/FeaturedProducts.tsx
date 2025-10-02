@@ -7,9 +7,9 @@ import featured2 from "@/assets/featured-2.jpg";
 import featured3 from "@/assets/featured-3.jpg";
 
 const imageMap: { [key: string]: string } = {
-  "featured-1": featured1,
-  "featured-2": featured2,
-  "featured-3": featured3,
+  "product-1": featured1,
+  "product-2": featured2,
+  "product-3": featured3,
 };
 
 const FeaturedProducts = () => {

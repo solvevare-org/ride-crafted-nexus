@@ -4,6 +4,8 @@ import FeaturedProducts from "@/components/FeaturedProducts";
 import Products from "@/components/Products";
 import Manufacturers from "@/components/Manufacturers";
 import CustomBuild from "@/components/CustomBuild";
+import Testimonials from "@/components/Testimonials";
+import Contact from "@/components/Contact";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 
@@ -14,8 +16,11 @@ const Index = () => {
       <Hero />
       <FeaturedProducts />
       <Products />
+      <Testimonials />
       <Manufacturers />
       <CustomBuild />
+      
+      <Contact />
       <CTABanner />
       <Footer />
     </div>
