@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Zap } from "lucide-react";
+import heroImage from "@/assets/hero-scooter.jpg";
 
 interface FormData {
   name: string;
@@ -103,7 +104,7 @@ const ContactSection = () => {
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: "url('/src/assets/hero-scooter.jpg')"
+                backgroundImage: `url(${heroImage})`
               }}
             ></div>
             {/* Dark Overlay */}
