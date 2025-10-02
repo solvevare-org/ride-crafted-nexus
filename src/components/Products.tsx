@@ -114,7 +114,7 @@ const Products = () => {
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold">${product.price}</span>
                   <Button
-                    className="bg-accent hover:bg-accent/90 text-white rounded-full px-6"
+                    className="bg-gradient-to-r from-accent to-blue-500 hover:from-accent/90 hover:to-blue-500 text-white rounded-full px-6"
                   >
                     Add to Cart
                   </Button>

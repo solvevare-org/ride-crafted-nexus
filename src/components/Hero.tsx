@@ -101,7 +101,7 @@ const Hero = () => {
           <Button
             size="lg"
             onClick={() => scrollToSection("products")}
-            className="flex items-center justify-center bg-white text-black hover:bg-white hover:text-black hover:-translate-y-0.5 hover:shadow-lg text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 ease-in-out"
+            className="flex items-center justify-center bg-gradient-to-r from-accent to-blue-500 hover:from-accent/90 hover:to-blue-500 text-white hover:-translate-y-0.5 hover:shadow-lg text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 ease-in-out"
             style={{
               boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
             }}
@@ -120,7 +120,7 @@ const Hero = () => {
             size="lg"
             variant="outline"
             onClick={() => scrollToSection("custom-build")}
-            className="flex items-center justify-center text-white bg-transparent hover:bg-white hover:text-black border border-white hover:border-black text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 ease-in-out"
+            className="flex items-center justify-center text-white bg-transparent hover:bg-white hover:text-black border border-white hover:border-black hover:-translate-y-0.5 text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 ease-in-out"
           >
             Build Yours
           </Button>

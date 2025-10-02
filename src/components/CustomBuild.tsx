@@ -119,7 +119,7 @@ const CustomBuild = () => {
             <p className="text-6xl font-bold mb-6">${totalPrice}</p>
             <Button
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-white text-lg px-12 py-6 rounded-full font-semibold"
+              className="bg-gradient-to-r from-accent to-blue-500 hover:from-accent/90 hover:to-blue-500 text-white text-lg px-12 py-6 rounded-full font-semibold"
             >
               Build & Buy
             </Button>

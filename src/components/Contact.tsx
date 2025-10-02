@@ -98,7 +98,7 @@ const ContactSection = () => {
           className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[600px] rounded-2xl overflow-hidden shadow-2xl"
         >
           {/* Left Side - Dark Background */}
-          <div className="bg-gradient-to-br from-black to-gray-600 relative overflow-hidden">
+          <div className="relative overflow-hidden">
             {/* Background Image */}
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -107,7 +107,7 @@ const ContactSection = () => {
               }}
             ></div>
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/70"></div>
+            <div className="absolute inset-0 bg-black/50"></div>
             {/* Pattern Overlay */}
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
             
@@ -262,7 +262,7 @@ const ContactSection = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-gradient-to-r from-black to-gray-500 hover:from-black/90 hover:to-gray-500 text-white px-8 py-3 rounded-full font-semibold flex items-center space-x-2 transition-all duration-300"
+                    className="bg-gradient-to-r from-accent to-blue-500 hover:from-accent/90 hover:to-blue-500 text-white px-8 py-3 rounded-full font-semibold flex items-center space-x-2 transition-all duration-300"
                   >
                     <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                     <ChevronRight className="w-4 h-4" />

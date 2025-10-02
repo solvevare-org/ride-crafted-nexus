@@ -25,7 +25,7 @@ const FeaturedProducts = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
+          <h2 className="text-5xl md:text-7xl font-medium font-italic font-[Poppins] tracking-tighter mb-4">
             Featured Collection
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -61,7 +61,7 @@ const FeaturedProducts = () => {
                 <div className="flex items-center justify-between">
                   <span className="text-3xl font-bold">${product.price}</span>
                   <Button
-                    className="bg-accent hover:bg-accent/90 text-white rounded-full px-8"
+                    className="bg-gradient-to-r from-accent to-blue-500 hover:from-accent/90 hover:to-blue-500 text-white rounded-full px-8"
                   >
                     Buy Now
                   </Button>

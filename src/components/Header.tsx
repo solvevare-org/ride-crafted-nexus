@@ -47,7 +47,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {["products", "manufacturers", "custom-build", "featured"].map((item) => (
+            {["products", "manufacturers", "custom-build", "featured", "testimonials", "contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -109,8 +109,8 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background border-b border-border overflow-hidden"
           >
-            <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
-              {["products", "manufacturers", "custom-build", "featured"].map((item) => (
+            <nav className="container mx-auto px-6 py-6 flex justify-center items-center flex-col gap-4">
+              {["products", "manufacturers", "custom-build", "featured", "testimonials", "contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
